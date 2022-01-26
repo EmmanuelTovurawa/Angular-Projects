@@ -4,8 +4,13 @@ import { CanActivate } from '@angular/router';
 export class LoginService {
   isLoggedIn = false;
   login(username: any, password: any) {
-    if (username === 'jason' && password === '123') this.isLoggedIn = true;
-    else this.isLoggedIn = false;
+    if (username === 'jason' && password === '123') {
+      this.isLoggedIn = true;
+      console.log('Making isLoggedIn true');
+    } else {
+      this.isLoggedIn = false;
+      console.log('Making isLoggedIn false');
+    }
     return this.isLoggedIn;
   }
   logout() {

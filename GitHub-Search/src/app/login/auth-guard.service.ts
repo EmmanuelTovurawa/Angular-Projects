@@ -5,7 +5,12 @@ import { LoginService } from './login.service';
 export class AuthGuard implements CanActivate {
   constructor(private _loginService: LoginService, private _router: Router) {}
   canActivate() {
-    if (this._loginService.isLoggedIn) return true;
+    if (this._loginService.isLoggedIn) {
+      return true;
+      console.log('isLoggedIn is true');
+    } else {
+      console.log('isLoggedIn is false');
+    }
     // imperative navigation
     this._router.navigate(['login']);
     return false;

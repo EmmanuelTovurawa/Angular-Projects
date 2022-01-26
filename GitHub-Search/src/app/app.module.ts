@@ -1,35 +1,16 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { NotFoundComponent } from './notfound.component';
 import { HomeComponent } from './home.component';
-import { OwnComponent } from './own.component';
-import { GitHubComponent } from './github.component';
+import { NotFoundComponent } from './notfound.component';
+import { GitHubModule } from './github/github.module';
+import { LoginModule } from './login/login.module';
 import { routing } from './app.routing';
-import { GitHubUserComponent } from './githubuser.component';
-import { AuthGuard } from './auth-guard.service';
-import { LoginComponent } from './login.component';
-import { LoginService } from './login.service';
-import { GitHubService } from './github.service';
-import { PasswordValidator } from './passwordValidator';
-
+import { GitHubRouting } from './github/github.routing';
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NotFoundComponent,
-    GitHubComponent,
-    OwnComponent,
-    GitHubUserComponent,
-    LoginComponent,
-  ],
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, routing],
-  exports: [],
-  providers: [AuthGuard, LoginService, GitHubService, PasswordValidator],
+  declarations: [AppComponent, HomeComponent, NotFoundComponent],
+  imports: [BrowserModule, LoginModule, GitHubModule, GitHubRouting, routing],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

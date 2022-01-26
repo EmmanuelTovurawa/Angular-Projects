@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularcrud-7418d": {
+      "hosting": {
+        "AngularCRUD": [
+          "angularcrud-7418d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularcrud-7418d"
+  }
+}

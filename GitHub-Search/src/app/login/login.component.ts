@@ -39,9 +39,6 @@ export class LoginComponent {
       this.form.controls['password'].setErrors({
         invalidLogin: true,
       });
-    } else {
-      console.log('Logged in');
-      this._router.navigate(['GitHub']);
     }
   }
 }
