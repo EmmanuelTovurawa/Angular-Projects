@@ -105,8 +105,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "AngularCRUD:build:production",
-            "firebaseProject": "angularcrud-7418d",
-            "firebaseHostingSite": "angularcrud-7418d"
+            "firebaseProject": "angularcrud-44160",
+            "firebaseHostingSite": "angularcrud-44160"
           }
         }
       }

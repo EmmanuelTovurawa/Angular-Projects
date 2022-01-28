@@ -4,31 +4,14 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    /*  projectId: 'fb-project-84895',
-    appId: '1:417619046310:web:fb726781b65b265f91e967',
-    storageBucket: 'fb-project-84895.appspot.com',
-    apiKey: 'AIzaSyDxiqSkkSBCIz3WZUBWR3yFd5PSVLiG6jk',
-    authDomain: 'fb-project-84895.firebaseapp.com',
-    messagingSenderId: '417619046310',
-    measurementId: 'G-SJC04ZHZP9',*/
-    apiKey: 'AIzaSyDQp4ZcsvzOUKzV97zozTBEiHRC5ApfxHc',
-    authDomain: 'angularcrud-7418d.firebaseapp.com',
-    projectId: 'angularcrud-7418d',
-    storageBucket: 'angularcrud-7418d.appspot.com',
-    messagingSenderId: '1072082647643',
-    appId: '1:1072082647643:web:55c67fd98c16cb7d811d7e',
-    measurementId: 'G-W255413K3C',
-  },
-
   firebaseConfig: {
-    apiKey: 'AIzaSyDQp4ZcsvzOUKzV97zozTBEiHRC5ApfxHc',
-    authDomain: 'angularcrud-7418d.firebaseapp.com',
-    projectId: 'angularcrud-7418d',
-    storageBucket: 'angularcrud-7418d.appspot.com',
-    messagingSenderId: '1072082647643',
-    appId: '1:1072082647643:web:55c67fd98c16cb7d811d7e',
-    measurementId: 'G-W255413K3C',
+    apiKey: 'AIzaSyDR1uoCTo0Rk-emrudAChjuegUb9NPkoI8',
+    authDomain: 'angularcrud-44160.firebaseapp.com',
+    projectId: 'angularcrud-44160',
+    storageBucket: 'angularcrud-44160.appspot.com',
+    messagingSenderId: '145783280854',
+    appId: '1:145783280854:web:8e1a0637bcfd32d29fe577',
+    measurementId: 'G-BMCYZEZ9PS',
   },
 };
 
