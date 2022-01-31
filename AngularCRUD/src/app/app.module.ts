@@ -10,9 +10,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { UserComponent } from './user/user.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, UserFormComponent],
+  declarations: [AppComponent, UserComponent, UserFormComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
