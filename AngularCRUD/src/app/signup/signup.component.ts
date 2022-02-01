@@ -5,11 +5,11 @@ import { LoginService } from '../login.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   form: FormGroup;
   invalidLoginMessage: string = '';
 
@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login() {
-    var result = this._loginService.login(
+  onSignup() {
+    var result = this._loginService.signup(
       this.form.controls['username'].value,
       this.form.controls['password'].value
     );

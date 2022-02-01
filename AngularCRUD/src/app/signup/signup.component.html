@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="form" (ngSubmit)="login()">
+    <form [formGroup]="form" (ngSubmit)="onSignup()">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" formControlName="username">
@@ -24,6 +24,6 @@
             </div>
             <div *ngIf="invalidLoginMessage" class="alert alert-danger"> {{invalidLoginMessage}} </div>       
         </div>    
-        <button class="btn btn-primary" type="submit">Login</button>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
     </form>    
 </div>

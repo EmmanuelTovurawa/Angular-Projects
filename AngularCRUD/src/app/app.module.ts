@@ -11,9 +11,18 @@ import { environment } from '../environments/environment';
 import { UserComponent } from './user/user.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login.service';
+import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, UserFormComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    UserComponent,
+    UserFormComponent,
+    LoginComponent,
+    SignupComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +31,7 @@ import { LoginComponent } from './login/login.component';
     AngularFirestoreModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

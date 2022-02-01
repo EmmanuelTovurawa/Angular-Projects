@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'AngularCRUD';
-  constructor(private afs: AngularFirestore, private _router: Router) {
-    console.log(afs);
+  isLoggedIn!: Observable<boolean>;
+  constructor(private loginService: LoginService) {}
+
+  ngOnInit() {
+    this.loginService.getCurrentUser();
+    this.isLoggedIn = this.loginService.isLoggedIn;
   }
-  add() {
-    this._router.navigate(['add']);
+
+  onLogout() {
+    this.loginService.logout();
   }
 }

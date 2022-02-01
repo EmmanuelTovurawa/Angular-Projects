@@ -7,6 +7,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { User } from '../user';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-user-form',
@@ -27,7 +28,8 @@ export class UserFormComponent implements OnInit {
     private _fb: FormBuilder,
     private _router: Router,
     private afs: AngularFirestore,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _loginService: LoginService
   ) {
     this.form = _fb.group({
       username: ['', Validators.required],
@@ -42,7 +44,9 @@ export class UserFormComponent implements OnInit {
       this.title = 'New User';
     } else {
       this.title = 'Edit User';
-      this.userDoc = this.afs.doc('users/' + this.id);
+      this.userDoc = this.afs.doc(
+        'users/' + this._loginService.loggedInUser + '/clients/' + this.id
+      );
       this.userDoc.valueChanges().subscribe((user) => {
         this.form.get('username')!.setValue(user!.name);
         this.form.get('email')!.setValue(user!.email);
@@ -51,15 +55,21 @@ export class UserFormComponent implements OnInit {
   }
   submit() {
     if (this.id) {
-      this.afs.doc('users/' + this.id).update({
-        name: this.user.name,
-        email: this.user.email,
-      });
+      this.afs
+        .doc('users/' + this._loginService.loggedInUser + '/clients/' + this.id)
+        .update({
+          name: this.user.name,
+          email: this.user.email,
+        });
     } else {
-      this.afs.collection('users').add({
-        name: this.user.name,
-        email: this.user.email,
-      });
+      this.afs
+        .collection('users')
+        .doc(this._loginService.loggedInUser)
+        .collection('clients')
+        .add({
+          name: this.user.name,
+          email: this.user.email,
+        });
     }
     this._router.navigate(['']);
   }
